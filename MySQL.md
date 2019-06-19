@@ -1,3 +1,5 @@
+## MySQL 설치 및 설정
+
 ### Show hostname database server
 
 ![ex_screenshot](./캡처_mysql_hostname_version.PNG)
@@ -36,3 +38,4 @@ source /home/centos/posts23-04-2019-02-44.sql;
 
 ![ex_screenshot](./캡처_mysql_authors_post_table.PNG)
 
+## Extract tables authors and posts from the databases and create Hive tables.
