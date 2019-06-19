@@ -21,7 +21,7 @@ CREATE DATABASE test;
 
 create user 'training'@'localhost' identified by 'training';
 
-grant all privileges on *.* to 'training'@'localhost';
+grant all privileges on *.* to 'training'@'%';
 
 FLUSH PRIVILEGES;
 </pre>
@@ -39,3 +39,23 @@ source /home/centos/posts23-04-2019-02-44.sql;
 ![ex_screenshot](./캡처_mysql_authors_post_table.PNG)
 
 ## Extract tables authors and posts from the databases and create Hive tables.
+
+<pre>
+sqoop import \
+   --connect jdbc:mysql://localhost/test \
+   --username training \
+   --password training \
+   --table authors \
+   --target-dir /usr/training/ \
+   --fields-terminated-by '\t' 
+</pre>
+
+<pre>
+sqoop import \
+   --connect jdbc:mysql://localhost/test \
+   --username training \
+   --password training \
+   --table posts \
+   --target-dir /usr/training/ \
+   --fields-terminated-by '\t' 
+</pre>
