@@ -1,5 +1,3 @@
-[정리]
-
 
 ### List your instance ip and DNS name
 
